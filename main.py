@@ -4,9 +4,9 @@ import pygame
 
 def setAlarm(alarmTime):
     print(f"\nAlarm Stop: {alarmTime}")
-    sound = "Alarm_clock/Millionaire Glory 320 Kbps.mp3"
+    sound = "Millionaire Glory 320 Kbps.mp3"   # song file path
     running = True
-    alarm_start_time = None
+    alarm_start_time = None  
 
     while running:
         curr_time = datetime.datetime.now().strftime("%I:%M:%S %p")
@@ -34,5 +34,5 @@ if __name__ == "__main__":
     minute = int(input("Enter Minutes: "))
     seconds = int(input("Enter seconds: "))
     symbol= input("AM / PM: ")
-    alarmTime = (f"{hour:02d}:{minute:02d}:{seconds:02d} {symbol}").upper()
+    alarmTime = (f"{hour:02d}:{minute:02d}:{seconds:02d} {symbol}").upper()   # format specifier (:02d) for 2 digit decimal 
     setAlarm(alarmTime)
