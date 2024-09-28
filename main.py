@@ -5,27 +5,27 @@ import pygame
 def setAlarm(alarmTime):
     print(f"\nAlarm Stop: {alarmTime}")
     sound = "Millionaire Glory 320 Kbps.mp3"   # song file path
-    running = True
-    alarm_start_time = None  
+    running = True   
+    alarm_start_time = None    # for stores the start time of the alarm sound 
 
     while running:
-        curr_time = datetime.datetime.now().strftime("%I:%M:%S %p")
+        curr_time = datetime.datetime.now().strftime("%I:%M:%S %p")  # return current time in 12-hour format
         print(f"\r\033[031m{curr_time}\033[0m", end="")
        
-        if curr_time == alarmTime:
+        if curr_time == alarmTime:       # check if current time matches the alarm time
             print()
             print("Wake Up!")
-            running = False
+            running = False     # stop the loop
 
             pygame.mixer.init()
-            pygame.mixer.music.load(sound)
-            pygame.mixer.music.play()
-            alarm_start_time = time.time()
+            pygame.mixer.music.load(sound)   #load the alarm sound file 
+            pygame.mixer.music.play()        # for play the alarm sound
+            alarm_start_time = time.time()  # start time of the alarm sound.
 
-            while pygame.mixer.music.get_busy():
-                if time.time() - alarm_start_time >= 45:
-                    pygame.mixer.music.stop()
-                    break
+            while pygame.mixer.music.get_busy():          # loop for while music is playing 
+                if time.time() - alarm_start_time >= 45:    # check if the time hits 45 sec
+                    pygame.mixer.music.stop()   
+                    break 
                 
         time.sleep(1)
 
