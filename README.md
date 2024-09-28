@@ -1,5 +1,5 @@
-# Alarm_Clock
-### Alarm Clock for Beginners 
+## Alarm_Clock
+ 
 
 <p>Author - Karan Shukla </p>
 <p>Date - 2024-09-28 </p>
